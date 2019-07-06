@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import br.com.lucianoluzzi.pulselivechallenge.model.ArticleSummary
+import br.com.lucianoluzzi.pulselivechallenge.model.ViewRequestState
 import br.com.lucianoluzzi.pulselivechallenge.repository.ArticleRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -19,9 +20,13 @@ class ArticleSummaryViewModel @Inject constructor(
     val articlesSummary: LiveData<List<ArticleSummary>> by lazy {
         mArticlesSummary
     }
+    var viewState = MutableLiveData<ViewRequestState>().apply {
+        value = ViewRequestState.LOADING
+    }
 
     suspend fun getArticlesSummary() = withContext(Dispatchers.IO) {
         val articlesSummaryResponse = repository.fetchArticlesSummary()
         mArticlesSummary.postValue(articlesSummaryResponse)
+        viewState.postValue(ViewRequestState.SUCCESS)
     }
 }

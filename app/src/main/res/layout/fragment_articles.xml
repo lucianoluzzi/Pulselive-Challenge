@@ -2,6 +2,8 @@
 <layout>
     <data>
         <variable name="viewModel" type="br.com.lucianoluzzi.pulselivechallenge.view_model.ArticleSummaryViewModel"/>
+        <import type="br.com.lucianoluzzi.pulselivechallenge.model.ViewRequestState"/>
+        <import type="android.view.View"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -9,17 +11,30 @@
                                                        android:orientation="vertical"
                                                        android:layout_width="match_parent"
                                                        android:layout_height="match_parent"
-                                                       android:background="@android:color/darker_gray">
+                                                       android:background="@android:color/white">
 
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/articles"
+                android:background="@android:color/darker_gray"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:articles="@{ viewModel.articlesSummary }"
+                android:visibility="@{ viewModel.viewState == ViewRequestState.SUCCESS ? View.VISIBLE : View.GONE }"
                 android:layout_width="0dp"
                 android:layout_height="0dp"/>
+
+        <ProgressBar
+                android:id="@+id/progress"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="@{ viewModel.viewState == ViewRequestState.LOADING ? View.VISIBLE : View.GONE }"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+        />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

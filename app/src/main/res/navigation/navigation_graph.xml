@@ -5,5 +5,12 @@
 
     <fragment android:id="@+id/articlesFragment"
               android:name="br.com.lucianoluzzi.pulselivechallenge.view.ArticlesFragment"
-              android:label="ArticlesFragment"/>
+              android:label="ArticlesFragment">
+        <action android:id="@+id/action_articlesFragment_to_articleDetailFragment"
+                app:destination="@id/articleDetailFragment"
+                app:enterAnim="@anim/slide_in_right"/>
+    </fragment>
+    <fragment android:id="@+id/articleDetailFragment"
+              android:name="br.com.lucianoluzzi.pulselivechallenge.view.ArticleDetailFragment"
+              android:label="ArticleDetailFragment"/>
 </navigation>
