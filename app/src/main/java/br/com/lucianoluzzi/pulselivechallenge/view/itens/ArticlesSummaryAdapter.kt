@@ -1,4 +1,4 @@
-package br.com.lucianoluzzi.pulselivechallenge.view.adapter
+package br.com.lucianoluzzi.pulselivechallenge.view.itens
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -24,7 +24,7 @@ class ArticlesSummaryAdapter(private val context: Context, private val articles:
     }
 
     override fun onBindViewHolder(holder: ArticleSummaryViewHolder, position: Int) {
-        holder.setArticleSummary(articles[position])
+        holder.bind(articles[position])
     }
 
 }

@@ -1,4 +1,4 @@
-package br.com.lucianoluzzi.pulselivechallenge.view.adapter
+package br.com.lucianoluzzi.pulselivechallenge.view.itens
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,3 +14,4 @@ fun RecyclerView.setArticles(articles: List<ArticleSummary>?) {
     }
     layoutManager = LinearLayoutManager(context)
 }
+

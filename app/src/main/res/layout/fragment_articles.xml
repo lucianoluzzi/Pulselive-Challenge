@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="viewModel" type="br.com.lucianoluzzi.pulselivechallenge.view_model.ArticleSummaryViewModel"/>
         <import type="br.com.lucianoluzzi.pulselivechallenge.model.ViewRequestState"/>
@@ -23,7 +23,8 @@
                 app:articles="@{ viewModel.articlesSummary }"
                 android:visibility="@{ viewModel.viewState == ViewRequestState.SUCCESS ? View.VISIBLE : View.GONE }"
                 android:layout_width="0dp"
-                android:layout_height="0dp"/>
+                android:layout_height="0dp"
+                tools:listitem="@layout/item_article_summary"/>
 
         <ProgressBar
                 android:id="@+id/progress"
@@ -34,6 +35,7 @@
                 android:visibility="@{ viewModel.viewState == ViewRequestState.LOADING ? View.VISIBLE : View.GONE }"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                tools:visibility="gone"
         />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

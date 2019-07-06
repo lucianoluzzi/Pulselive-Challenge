@@ -16,7 +16,13 @@ class ArticlesFragment : Fragment() {
     private val viewModel: ArticleSummaryViewModel by lazy {
         (activity as MainActivity).articleSummaryViewModel
     }
+
     private lateinit var binding: FragmentArticlesBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        getArticles()
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(
@@ -28,7 +34,6 @@ class ArticlesFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-        getArticles()
 
         return binding.root
     }
