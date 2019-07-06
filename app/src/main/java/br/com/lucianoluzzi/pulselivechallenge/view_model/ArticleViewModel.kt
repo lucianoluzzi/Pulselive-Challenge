@@ -4,4 +4,5 @@ import androidx.lifecycle.ViewModel
 import br.com.lucianoluzzi.pulselivechallenge.repository.ArticleRepository
 
 class ArticleViewModel(private val repository: ArticleRepository) : ViewModel() {
+
 }
