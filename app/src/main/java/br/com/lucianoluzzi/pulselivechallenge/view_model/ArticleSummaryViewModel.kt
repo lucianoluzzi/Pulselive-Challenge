@@ -1,5 +1,6 @@
 package br.com.lucianoluzzi.pulselivechallenge.view_model
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import br.com.lucianoluzzi.pulselivechallenge.model.ArticleSummary
@@ -12,12 +13,15 @@ class ArticleSummaryViewModel @Inject constructor(
     private val repository: ArticleRepository
 ) : ViewModel() {
 
-    private val articleSummary = MutableLiveData<List<ArticleSummary>>().apply {
+    private val mArticlesSummary = MutableLiveData<List<ArticleSummary>>().apply {
         listOf<ArticleSummary>()
+    }
+    val articlesSummary: LiveData<List<ArticleSummary>> by lazy {
+        mArticlesSummary
     }
 
     suspend fun getArticlesSummary() = withContext(Dispatchers.IO) {
         val articlesSummaryResponse = repository.fetchArticlesSummary()
-        articleSummary.postValue(articlesSummaryResponse)
+        mArticlesSummary.postValue(articlesSummaryResponse)
     }
 }

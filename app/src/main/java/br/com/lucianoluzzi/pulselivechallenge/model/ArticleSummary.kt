@@ -1,8 +1,8 @@
 package br.com.lucianoluzzi.pulselivechallenge.model
 
-open class ArticleSummary (
-    private val id: Int,
-    private val title: String,
-    private val subtitle: String,
-    private val date: String
+open class ArticleSummary(
+    val id: Int,
+    val title: String,
+    val subtitle: String,
+    val date: String
 )

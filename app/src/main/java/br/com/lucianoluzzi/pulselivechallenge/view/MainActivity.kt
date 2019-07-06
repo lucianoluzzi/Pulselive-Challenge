@@ -18,16 +18,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         injectDependencies()
-        getArticles()
     }
 
     private fun injectDependencies() {
         (application as App).component().inject(this)
-    }
-
-    private fun getArticles() {
-        articleSummaryViewModel.viewModelScope.launch {
-            articleSummaryViewModel.getArticlesSummary()
-        }
     }
 }
