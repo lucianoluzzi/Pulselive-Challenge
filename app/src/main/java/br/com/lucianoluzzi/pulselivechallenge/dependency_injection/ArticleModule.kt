@@ -6,19 +6,19 @@ import br.com.lucianoluzzi.pulselivechallenge.repository.ArticleRepository
 import br.com.lucianoluzzi.pulselivechallenge.repository.ArticleRepositoryImpl
 import dagger.Module
 import dagger.Provides
-import javax.inject.Singleton
+import dagger.Reusable
 
 @Module
 class ArticleModule {
 
     @Provides
-    @Singleton
+    @Reusable
     fun provideArticleService(): ArticleService {
         return WebClient().service()
     }
 
     @Provides
-    @Singleton
+    @Reusable
     fun provideArticleRepository(service: ArticleService): ArticleRepository {
         return ArticleRepositoryImpl(service)
     }
