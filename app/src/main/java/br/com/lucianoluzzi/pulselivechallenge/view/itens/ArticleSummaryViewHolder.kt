@@ -20,7 +20,7 @@ class ArticleSummaryViewHolder(private val binding: ItemArticleSummaryBinding) :
     }
 
     private fun navigate(articleSummary: ArticleSummary): View.OnClickListener {
-        val directionToDetailFragment = ArticlesFragmentDirections.actionArticlesToDetail(articleSummary)
+        val directionToDetailFragment = ArticlesFragmentDirections.actionArticlesToDetail(articleSummary.id)
         return Navigation.createNavigateOnClickListener(directionToDetailFragment)
     }
 }

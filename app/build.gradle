@@ -25,7 +25,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", 'HOST_URL', '"http://dynamic.pulselive.com"'
+        }
         release {
+            buildConfigField "String", 'HOST_URL', '"http://dynamic.pulselive.com"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -34,7 +38,7 @@ android {
 
 dependencies {
     def retrofit_version = '2.5.0'
-    def lifecycle_version = "2.2.0-alpha01"
+    def lifecycle_version = "2.2.0-alpha02"
     def nav_version = "2.1.0-alpha06"
     def dagger_version = "2.11"
 

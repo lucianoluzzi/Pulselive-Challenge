@@ -11,6 +11,7 @@ import br.com.lucianoluzzi.pulselivechallenge.model.ArticleSummary
 
 class ArticlesSummaryAdapter(private val context: Context, private val articles: List<ArticleSummary>) :
     RecyclerView.Adapter<ArticleSummaryViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleSummaryViewHolder {
         val inflater = LayoutInflater.from(context)
         val binding =

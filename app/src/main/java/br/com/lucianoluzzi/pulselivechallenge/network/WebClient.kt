@@ -1,16 +1,13 @@
 package br.com.lucianoluzzi.pulselivechallenge.network
 
+import br.com.lucianoluzzi.pulselivechallenge.BuildConfig
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class WebClient {
-    companion object {
-        const val HOST = "http://dynamic.pulselive.com"
-    }
-
     private val retrofit: Retrofit = retrofit()
     private fun retrofit() = with(Retrofit.Builder()) {
-        baseUrl(HOST)
+        baseUrl(BuildConfig.HOST_URL)
         addConverterFactory(GsonConverterFactory.create())
         build()
     }

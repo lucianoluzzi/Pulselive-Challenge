@@ -4,20 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.viewModelScope
 import br.com.lucianoluzzi.pulselivechallenge.R
 import br.com.lucianoluzzi.pulselivechallenge.databinding.FragmentArticlesBinding
 import br.com.lucianoluzzi.pulselivechallenge.view_model.ArticleSummaryViewModel
 import kotlinx.coroutines.launch
 
-class ArticlesFragment : Fragment() {
+class ArticlesFragment : BaseFragment<FragmentArticlesBinding>() {
     private val viewModel: ArticleSummaryViewModel by lazy {
         (activity as MainActivity).articleSummaryViewModel
     }
-
-    private lateinit var binding: FragmentArticlesBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,23 +21,11 @@ class ArticlesFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = getBinding(inflater, container)
+        createViewBinding(container, R.layout.fragment_articles)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
         return binding.root
-    }
-
-    private fun getBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentArticlesBinding {
-        return DataBindingUtil.inflate(
-            inflater,
-            R.layout.fragment_articles,
-            container,
-            false
-        )
     }
 
     private fun getArticles() {

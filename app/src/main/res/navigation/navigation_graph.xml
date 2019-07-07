@@ -16,7 +16,7 @@
     <fragment android:id="@+id/articleDetailFragment"
               android:name="br.com.lucianoluzzi.pulselivechallenge.view.ArticleDetailFragment"
               android:label="ArticleDetailFragment">
-        <argument android:name="article_summary"
-                  app:argType="br.com.lucianoluzzi.pulselivechallenge.model.ArticleSummary"/>
+        <argument android:name="article_id"
+                  app:argType="integer"/>
     </fragment>
 </navigation>
