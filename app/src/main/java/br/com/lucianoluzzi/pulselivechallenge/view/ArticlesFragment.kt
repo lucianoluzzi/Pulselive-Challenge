@@ -25,17 +25,23 @@ class ArticlesFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(
+        binding = getBinding(inflater, container)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+
+        return binding.root
+    }
+
+    private fun getBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentArticlesBinding {
+        return DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_articles,
             container,
             false
         )
-        binding.viewModel = viewModel
-        binding.lifecycleOwner = this
-
-
-        return binding.root
     }
 
     private fun getArticles() {

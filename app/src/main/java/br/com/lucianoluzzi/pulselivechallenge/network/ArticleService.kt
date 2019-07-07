@@ -1,14 +1,15 @@
 package br.com.lucianoluzzi.pulselivechallenge.network
 
+import br.com.lucianoluzzi.pulselivechallenge.network.dto.ArticleResponse
 import br.com.lucianoluzzi.pulselivechallenge.network.dto.ArticlesSummaryResponse
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.Path
 
 interface ArticleService {
     @GET("test/native/contentList.json")
     fun fetchArticlesSummary(): Call<ArticlesSummaryResponse>
 
     @GET("test/native/content/{id}.json")
-    fun fetchArticle(@Query("id") id: Int)
+    fun fetchArticle(@Path("id") id: String): Call<ArticleResponse>
 }

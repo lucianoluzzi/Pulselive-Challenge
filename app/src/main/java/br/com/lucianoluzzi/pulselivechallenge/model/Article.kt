@@ -1,7 +1,7 @@
 package br.com.lucianoluzzi.pulselivechallenge.model
 
 class Article(
-    private val body: String,
+    val body: String,
     id: Int,
     title: String,
     subtitle: String,

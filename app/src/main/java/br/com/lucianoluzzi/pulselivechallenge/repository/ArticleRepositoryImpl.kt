@@ -8,7 +8,7 @@ import javax.inject.Inject
 class ArticleRepositoryImpl @Inject constructor(
     private val service: ArticleService
 ) : ArticleRepository {
-    
+
     override fun fetchArticlesSummary(): List<ArticleSummary> {
         val response = service.fetchArticlesSummary().execute()
 
@@ -18,7 +18,8 @@ class ArticleRepositoryImpl @Inject constructor(
             }
     }
 
-    override fun fetchArticle(id: Int): Article {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun fetchArticle(id: Int): Article? {
+        val response = service.fetchArticle(id.toString()).execute()
+        return response.body()?.item
     }
 }

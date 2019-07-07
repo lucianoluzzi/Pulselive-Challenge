@@ -15,5 +15,8 @@
     </fragment>
     <fragment android:id="@+id/articleDetailFragment"
               android:name="br.com.lucianoluzzi.pulselivechallenge.view.ArticleDetailFragment"
-              android:label="ArticleDetailFragment"/>
+              android:label="ArticleDetailFragment">
+        <argument android:name="article_summary"
+                  app:argType="br.com.lucianoluzzi.pulselivechallenge.model.ArticleSummary"/>
+    </fragment>
 </navigation>
