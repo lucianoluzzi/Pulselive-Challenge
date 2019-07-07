@@ -24,7 +24,11 @@ class ArticleViewModel @Inject constructor(
 
     suspend fun getArticle(id: Int) = withContext(Dispatchers.IO) {
         val fetchedArticle = repository.fetchArticle(id)
-        mArticle.postValue(fetchedArticle)
-        viewState.postValue(ViewRequestState.SUCCESS)
+        fetchedArticle?.let {
+            mArticle.postValue(fetchedArticle)
+            viewState.postValue(ViewRequestState.SUCCESS)
+        } ?: run {
+            viewState.postValue(ViewRequestState.ERROR)
+        }
     }
 }

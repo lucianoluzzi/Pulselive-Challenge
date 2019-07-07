@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Pulselive Challenge</string>
+    <string name="error_message">Sorry, we could not process your request.\nPlease come back in a few minutes.</string>
 </resources>

@@ -19,7 +19,7 @@ class ArticleDetailFragment : BaseFragment<FragmentArticleDetailBinding>() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         createViewBinding(container, R.layout.fragment_article_detail)
-        binding.viewmodel = viewModel
+        binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
         getArticle()

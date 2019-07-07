@@ -9,13 +9,9 @@ class ArticleRepositoryImpl @Inject constructor(
     private val service: ArticleService
 ) : ArticleRepository {
 
-    override fun fetchArticlesSummary(): List<ArticleSummary> {
+    override fun fetchArticlesSummary(): List<ArticleSummary>? {
         val response = service.fetchArticlesSummary().execute()
-
         return response.body()?.items
-            ?: run {
-                listOf<ArticleSummary>()
-            }
     }
 
     override fun fetchArticle(id: Int): Article? {

@@ -26,7 +26,11 @@ class ArticleSummaryViewModel @Inject constructor(
 
     suspend fun getArticlesSummary() = withContext(Dispatchers.IO) {
         val articlesSummaryResponse = repository.fetchArticlesSummary()
-        mArticlesSummary.postValue(articlesSummaryResponse)
-        viewState.postValue(ViewRequestState.SUCCESS)
+        articlesSummaryResponse?.let {
+            mArticlesSummary.postValue(it)
+            viewState.postValue(ViewRequestState.SUCCESS)
+        } ?: run {
+            viewState.postValue(ViewRequestState.ERROR)
+        }
     }
 }
