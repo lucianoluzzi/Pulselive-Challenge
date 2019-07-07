@@ -15,16 +15,12 @@ class ArticlesFragment : BaseFragment<FragmentArticlesBinding>() {
         (activity as MainActivity).articleSummaryViewModel
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        getArticles()
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         createViewBinding(container, R.layout.fragment_articles)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
+        getArticles()
         return binding.root
     }
 
