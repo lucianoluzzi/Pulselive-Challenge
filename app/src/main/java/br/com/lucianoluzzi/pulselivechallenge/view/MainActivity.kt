@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import br.com.lucianoluzzi.pulselivechallenge.App
 import br.com.lucianoluzzi.pulselivechallenge.R
-import br.com.lucianoluzzi.pulselivechallenge.view_model.ArticleSummaryViewModel
-import br.com.lucianoluzzi.pulselivechallenge.view_model.ArticleViewModel
+import br.com.lucianoluzzi.pulselivechallenge.viewModel.ArticleSummaryViewModel
+import br.com.lucianoluzzi.pulselivechallenge.viewModel.ArticleViewModel
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {

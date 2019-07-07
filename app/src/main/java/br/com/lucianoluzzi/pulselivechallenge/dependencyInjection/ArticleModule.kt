@@ -1,4 +1,4 @@
-package br.com.lucianoluzzi.pulselivechallenge.dependency_injection
+package br.com.lucianoluzzi.pulselivechallenge.dependencyInjection
 
 import br.com.lucianoluzzi.pulselivechallenge.network.ArticleService
 import br.com.lucianoluzzi.pulselivechallenge.network.WebClient

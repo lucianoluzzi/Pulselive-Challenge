@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.viewModelScope
 import br.com.lucianoluzzi.pulselivechallenge.R
 import br.com.lucianoluzzi.pulselivechallenge.databinding.FragmentArticlesBinding
-import br.com.lucianoluzzi.pulselivechallenge.view_model.ArticleSummaryViewModel
+import br.com.lucianoluzzi.pulselivechallenge.viewModel.ArticleSummaryViewModel
 import kotlinx.coroutines.launch
 
 class ArticlesFragment : BaseFragment<FragmentArticlesBinding>() {

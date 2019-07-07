@@ -2,7 +2,7 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable name="viewModel" type="br.com.lucianoluzzi.pulselivechallenge.view_model.ArticleViewModel"/>
+        <variable name="viewModel" type="br.com.lucianoluzzi.pulselivechallenge.viewModel.ArticleViewModel"/>
         <import type="br.com.lucianoluzzi.pulselivechallenge.model.ViewRequestState"/>
         <import type="android.view.View"/>
     </data>

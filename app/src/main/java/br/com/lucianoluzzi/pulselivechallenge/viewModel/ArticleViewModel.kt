@@ -1,4 +1,4 @@
-package br.com.lucianoluzzi.pulselivechallenge.view_model
+package br.com.lucianoluzzi.pulselivechallenge.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
