@@ -1,10 +1,10 @@
-package br.com.lucianoluzzi.pulselivechallenge.viewModel
+package br.com.lucianoluzzi.pulselivechallenge.ui.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import br.com.lucianoluzzi.pulselivechallenge.model.Article
-import br.com.lucianoluzzi.pulselivechallenge.model.ArticleSummary
-import br.com.lucianoluzzi.pulselivechallenge.model.ViewRequestState
+import br.com.lucianoluzzi.pulselivechallenge.model.entity.Article
+import br.com.lucianoluzzi.pulselivechallenge.model.entity.ArticleSummary
+import br.com.lucianoluzzi.pulselivechallenge.model.entity.ViewRequestState
 import br.com.lucianoluzzi.pulselivechallenge.repository.ArticleRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

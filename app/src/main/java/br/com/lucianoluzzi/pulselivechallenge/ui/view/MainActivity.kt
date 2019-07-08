@@ -1,12 +1,12 @@
-package br.com.lucianoluzzi.pulselivechallenge.view
+package br.com.lucianoluzzi.pulselivechallenge.ui.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import br.com.lucianoluzzi.pulselivechallenge.App
 import br.com.lucianoluzzi.pulselivechallenge.R
-import br.com.lucianoluzzi.pulselivechallenge.viewModel.ArticleListViewModel
-import br.com.lucianoluzzi.pulselivechallenge.viewModel.ArticleViewModel
+import br.com.lucianoluzzi.pulselivechallenge.ui.viewModel.ArticleListViewModel
+import br.com.lucianoluzzi.pulselivechallenge.ui.viewModel.ArticleViewModel
 
 class MainActivity : AppCompatActivity() {
     val articleViewModel: ArticleViewModel by lazy {

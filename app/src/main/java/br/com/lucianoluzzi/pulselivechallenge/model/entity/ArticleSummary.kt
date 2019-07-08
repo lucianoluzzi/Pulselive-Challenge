@@ -1,4 +1,4 @@
-package br.com.lucianoluzzi.pulselivechallenge.model
+package br.com.lucianoluzzi.pulselivechallenge.model.entity
 
 import java.io.Serializable
 

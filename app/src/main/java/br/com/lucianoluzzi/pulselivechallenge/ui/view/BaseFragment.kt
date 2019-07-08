@@ -1,4 +1,4 @@
-package br.com.lucianoluzzi.pulselivechallenge.view
+package br.com.lucianoluzzi.pulselivechallenge.ui.view
 
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes

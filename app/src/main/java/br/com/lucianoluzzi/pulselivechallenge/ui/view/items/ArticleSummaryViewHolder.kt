@@ -1,11 +1,11 @@
-package br.com.lucianoluzzi.pulselivechallenge.view.itens
+package br.com.lucianoluzzi.pulselivechallenge.ui.view.items
 
 import android.view.View
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import br.com.lucianoluzzi.pulselivechallenge.databinding.ItemArticleSummaryBinding
-import br.com.lucianoluzzi.pulselivechallenge.model.Article
-import br.com.lucianoluzzi.pulselivechallenge.view.ArticlesFragmentDirections
+import br.com.lucianoluzzi.pulselivechallenge.model.entity.Article
+import br.com.lucianoluzzi.pulselivechallenge.ui.view.ArticlesFragmentDirections
 
 class ArticleSummaryViewHolder(private val binding: ItemArticleSummaryBinding) :
     RecyclerView.ViewHolder(binding.root) {

@@ -2,7 +2,7 @@
 <layout xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="viewModel" type="br.com.lucianoluzzi.pulselivechallenge.viewModel.ArticleListViewModel"/>
-        <import type="br.com.lucianoluzzi.pulselivechallenge.model.ViewRequestState"/>
+        <import type="br.com.lucianoluzzi.pulselivechallenge.model.entity.ViewRequestState"/>
         <import type="android.view.View"/>
     </data>
 

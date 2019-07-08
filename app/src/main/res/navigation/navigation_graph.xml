@@ -4,7 +4,7 @@
             android:id="@+id/navigation_graph" app:startDestination="@id/articlesFragment">
 
     <fragment android:id="@+id/articlesFragment"
-              android:name="br.com.lucianoluzzi.pulselivechallenge.view.ArticlesFragment"
+              android:name="br.com.lucianoluzzi.pulselivechallenge.ui.view.ArticlesFragment"
               android:label="ArticlesFragment">
         <action android:id="@+id/action_articles_to_detail"
                 app:destination="@id/articleDetailFragment"
@@ -14,7 +14,7 @@
                 app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment android:id="@+id/articleDetailFragment"
-              android:name="br.com.lucianoluzzi.pulselivechallenge.view.ArticleDetailFragment"
+              android:name="br.com.lucianoluzzi.pulselivechallenge.ui.view.ArticleDetailFragment"
               android:label="ArticleDetailFragment">
         <argument android:name="article_id"
                   app:argType="integer"/>

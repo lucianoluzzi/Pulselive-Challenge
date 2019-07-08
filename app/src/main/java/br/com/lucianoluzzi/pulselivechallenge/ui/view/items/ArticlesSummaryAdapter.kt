@@ -1,4 +1,4 @@
-package br.com.lucianoluzzi.pulselivechallenge.view.itens
+package br.com.lucianoluzzi.pulselivechallenge.ui.view.items
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import br.com.lucianoluzzi.pulselivechallenge.R
 import br.com.lucianoluzzi.pulselivechallenge.databinding.ItemArticleSummaryBinding
-import br.com.lucianoluzzi.pulselivechallenge.model.Article
+import br.com.lucianoluzzi.pulselivechallenge.model.entity.Article
 
 class ArticlesSummaryAdapter(private val context: Context, private val articles: List<Article>) :
     RecyclerView.Adapter<ArticleSummaryViewHolder>() {

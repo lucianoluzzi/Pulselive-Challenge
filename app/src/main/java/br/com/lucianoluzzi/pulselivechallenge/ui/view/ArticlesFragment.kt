@@ -1,4 +1,4 @@
-package br.com.lucianoluzzi.pulselivechallenge.view
+package br.com.lucianoluzzi.pulselivechallenge.ui.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.viewModelScope
 import br.com.lucianoluzzi.pulselivechallenge.R
 import br.com.lucianoluzzi.pulselivechallenge.databinding.FragmentArticlesBinding
-import br.com.lucianoluzzi.pulselivechallenge.viewModel.ArticleListViewModel
+import br.com.lucianoluzzi.pulselivechallenge.ui.viewModel.ArticleListViewModel
 import kotlinx.coroutines.launch
 
 class ArticlesFragment : BaseFragment<FragmentArticlesBinding>() {

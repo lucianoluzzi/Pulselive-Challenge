@@ -1,4 +1,4 @@
-package br.com.lucianoluzzi.pulselivechallenge.viewModel
+package br.com.lucianoluzzi.pulselivechallenge.ui.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
