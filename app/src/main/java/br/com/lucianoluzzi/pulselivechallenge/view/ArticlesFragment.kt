@@ -7,12 +7,17 @@ import android.view.ViewGroup
 import androidx.lifecycle.viewModelScope
 import br.com.lucianoluzzi.pulselivechallenge.R
 import br.com.lucianoluzzi.pulselivechallenge.databinding.FragmentArticlesBinding
-import br.com.lucianoluzzi.pulselivechallenge.viewModel.ArticleSummaryViewModel
+import br.com.lucianoluzzi.pulselivechallenge.viewModel.ArticleListViewModel
 import kotlinx.coroutines.launch
 
 class ArticlesFragment : BaseFragment<FragmentArticlesBinding>() {
-    private val viewModel: ArticleSummaryViewModel by lazy {
-        (activity as MainActivity).articleSummaryViewModel
+    private val viewModel: ArticleListViewModel by lazy {
+        (activity as MainActivity).articleListViewModel
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        getArticles()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -20,7 +25,6 @@ class ArticlesFragment : BaseFragment<FragmentArticlesBinding>() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-        getArticles()
         return binding.root
     }
 

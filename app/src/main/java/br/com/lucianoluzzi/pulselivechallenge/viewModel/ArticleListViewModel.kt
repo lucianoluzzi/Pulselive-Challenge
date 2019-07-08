@@ -2,7 +2,7 @@ package br.com.lucianoluzzi.pulselivechallenge.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import br.com.lucianoluzzi.pulselivechallenge.model.Article
 import br.com.lucianoluzzi.pulselivechallenge.model.ArticleSummary
 import br.com.lucianoluzzi.pulselivechallenge.model.ViewRequestState
 import br.com.lucianoluzzi.pulselivechallenge.repository.ArticleRepository
@@ -10,24 +10,21 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class ArticleSummaryViewModel @Inject constructor(
+class ArticleListViewModel @Inject constructor(
     private val repository: ArticleRepository
-) : ViewModel() {
+) : BaseViewModel() {
 
-    private val mArticlesSummary = MutableLiveData<List<ArticleSummary>>().apply {
+    private val mArticleList = MutableLiveData<List<Article>>().apply {
         listOf<ArticleSummary>()
     }
-    val articlesSummary: LiveData<List<ArticleSummary>> by lazy {
-        mArticlesSummary
-    }
-    var viewState = MutableLiveData<ViewRequestState>().apply {
-        value = ViewRequestState.LOADING
+    val articleList: LiveData<List<Article>> by lazy {
+        mArticleList
     }
 
     suspend fun getArticlesSummary() = withContext(Dispatchers.IO) {
         val articlesSummaryResponse = repository.fetchArticlesSummary()
         articlesSummaryResponse?.let {
-            mArticlesSummary.postValue(it)
+            mArticleList.postValue(it)
             viewState.postValue(ViewRequestState.SUCCESS)
         } ?: run {
             viewState.postValue(ViewRequestState.ERROR)

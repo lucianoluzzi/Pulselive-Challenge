@@ -7,9 +7,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import br.com.lucianoluzzi.pulselivechallenge.R
 import br.com.lucianoluzzi.pulselivechallenge.databinding.ItemArticleSummaryBinding
-import br.com.lucianoluzzi.pulselivechallenge.model.ArticleSummary
+import br.com.lucianoluzzi.pulselivechallenge.model.Article
 
-class ArticlesSummaryAdapter(private val context: Context, private val articles: List<ArticleSummary>) :
+class ArticlesSummaryAdapter(private val context: Context, private val articles: List<Article>) :
     RecyclerView.Adapter<ArticleSummaryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleSummaryViewHolder {

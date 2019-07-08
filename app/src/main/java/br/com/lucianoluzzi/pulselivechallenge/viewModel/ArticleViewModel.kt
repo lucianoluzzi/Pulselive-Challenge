@@ -2,7 +2,6 @@ package br.com.lucianoluzzi.pulselivechallenge.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import br.com.lucianoluzzi.pulselivechallenge.model.Article
 import br.com.lucianoluzzi.pulselivechallenge.model.ViewRequestState
 import br.com.lucianoluzzi.pulselivechallenge.repository.ArticleRepository
@@ -12,14 +11,10 @@ import javax.inject.Inject
 
 class ArticleViewModel @Inject constructor(
     private val repository: ArticleRepository
-) : ViewModel() {
+) : BaseViewModel() {
     private val mArticle = MutableLiveData<Article>()
     val article: LiveData<Article> by lazy {
         mArticle
-    }
-
-    val viewState = MutableLiveData<ViewRequestState>().apply {
-        value = ViewRequestState.LOADING
     }
 
     suspend fun getArticle(id: Int) = withContext(Dispatchers.IO) {

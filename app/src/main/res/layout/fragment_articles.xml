@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable name="viewModel" type="br.com.lucianoluzzi.pulselivechallenge.viewModel.ArticleSummaryViewModel"/>
+        <variable name="viewModel" type="br.com.lucianoluzzi.pulselivechallenge.viewModel.ArticleListViewModel"/>
         <import type="br.com.lucianoluzzi.pulselivechallenge.model.ViewRequestState"/>
         <import type="android.view.View"/>
     </data>
@@ -20,7 +20,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:articles="@{ viewModel.articlesSummary }"
+                app:articles="@{ viewModel.articleList }"
                 android:visibility="@{ viewModel.viewState == ViewRequestState.SUCCESS ? View.VISIBLE : View.GONE }"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
