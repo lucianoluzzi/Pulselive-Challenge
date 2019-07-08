@@ -34,3 +34,5 @@ If this project would turn into production code, I would firstly move from kotli
 Would also implement local storage with Room, providing a way to the user read already fetched articles when offline.
 
 Without the thirdy-party libraries restriction, would provide unit and instrumented tests using Mockito.
+
+Would centralize gradle dependencies in a kotlin file, providing a cleaner and more scalable build file.
